@@ -1,0 +1,15 @@
+name = "longarm-mcp"
+main = "dist/worker.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+# build.mjs runs esbuild with loader:{'.node':'empty'} so ssh2's native
+# crypto addons are skipped — ssh2 falls back to pure JS automatically.
+[build]
+command = "node build.mjs"
+
+# Secrets are set via:
+#   wrangler secret put AUTH_TOKEN
+#
+# Or for local dev, copy .env.example to .env and fill in values.
+# wrangler dev reads .env automatically.

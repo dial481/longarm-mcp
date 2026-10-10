@@ -1,0 +1,19 @@
+{
+  "name": "longarm-mcp",
+  "version": "1.3.1",
+  "description": "MCP server on Cloudflare Workers -- SSH, SFTP, and HTTP/HTTPS fetch from any Claude session",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "wrangler dev --no-bundle",
+    "deploy": "wrangler deploy --no-bundle",
+    "tail": "wrangler tail"
+  },
+  "dependencies": {
+    "ssh2": "^1.17.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "wrangler": "^4.149.0"
+  }
+}
